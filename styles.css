@@ -57,29 +57,17 @@ body {
 
 /* Main Content Area */
 .main {
-  min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
 /* Ensure heading is above the grid content */
-h1 {
+.main h1 {
+  grid-column: 1 / -1;
   text-align: center;
-  grid-column: span 2; /* makes the heading span both columns */
-  margin-bottom: 20px; /* Add some space below the heading */
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .main {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    grid-column: span 1; /* makes sure heading fits within the single column */
-  }
+  margin-bottom: 20px;
 }
 
 /* Box for content */
@@ -93,9 +81,10 @@ h1 {
   justify-content: space-between;
 }
 
-/* Embedded content */
+/* Responsive aspect-ratio for embeds */
 iframe,
-object {
+object,
+video {
   width: 100%;
   aspect-ratio: 4 / 5;
   border: none;
@@ -149,7 +138,6 @@ object {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Hide all images by default */
 .mySlides {
   display: none;
   text-align: center;
@@ -157,7 +145,6 @@ object {
   color: #333;
 }
 
-/* Styling for previous and next buttons */
 .prev,
 .next {
   position: absolute;
@@ -182,7 +169,6 @@ object {
   right: 0;
 }
 
-/* Author text styling */
 .author {
   font-size: 18px;
   font-style: italic;
@@ -190,7 +176,6 @@ object {
   color: #555;
 }
 
-/* Quote text styling */
 q {
   font-size: 28px;
   font-family: "Rufina", serif;
