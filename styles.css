@@ -33,6 +33,7 @@ body {
   color: #000;
   margin: 0 10px;
   text-decoration: none;
+  font-family: "Oxygen", sans-serif;
 }
 
 .header a:hover {
