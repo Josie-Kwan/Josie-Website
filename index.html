@@ -2,90 +2,143 @@
 <html>
   <head>
     <title>Josie Kwan</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rufina|Oxygen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       body {
-        font-family: "Oxygen", san-serif;
+        font-family: "Oxygen", sans-serif;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: 20px auto;
+      }
+
+      /* Hide all images by default */
+      .mySlides {
+        display: none;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        color: #333;
+      }
+
+      /* Style for previous and next buttons */
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        user-select: none;
+      }
+
+      .prev {
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      .next {
+        right: 0;
+        transform: translateY(-50%);
+      }
+
+      /* Author text */
+      .author {
+        font-size: 18px;
+        font-style: italic;
+        margin-top: 10px;
+      }
+
+      /* Styling for quote text */
+      q {
+        font-size: 28px;
+        font-family: "Rufina", serif;
+        display: block;
+        margin: 10px 0;
+        color: black;
       }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <div>       <!--header--> 
-      <nav class="header" style="font-family: Rufina;">
-        <a class="header-item" id="Homepage-link" src="https://josie-kwan.github.io/Josie-Website/"><b>Josie Kwan</b></a>
-        <div class="container-header">
-          <a class="header-item" id="About-link" href="About.html">About</a>
-          <a class="header-item" id="Poetry-link" href="Poetry.html">Poetry</a>
-          <a class="header-item" id="Prose-link" href="Prose.html">Prose</a>
-        </div>
-    </div>
   </head>
 
   <body>
-    
-  <div><section>
-    <img id="homepage-photo" src="images/Atl sunset.jpeg" style="display: flex; width: 100%; margin: 0px;">
-  </section></div>
+    <!-- Header -->
+    <nav class="header" style="font-family: Rufina;">
+      <a class="header-item" id="Homepage-link" href="https://josie-kwan.github.io/Josie-Website/"><b>Josie Kwan</b></a>
+      <div class="container-header">
+        <a class="header-item" id="About-link" href="About.html">About</a>
+        <a class="header-item" id="Poetry-link" href="Poetry.html">Poetry</a>
+        <a class="header-item" id="Prose-link" href="Prose.html">Prose</a>
+      </div>
+    </nav>
 
-  <div class="slideshow-container">
+    <!-- Main content -->
+    <div>
+      <section>
+        <img id="homepage-photo" src="images/Atl sunset.jpeg" style="width: 100%; margin: 0px;" />
+      </section>
+    </div>
 
+    <!-- Slideshow for quotes -->
+    <div class="slideshow-container">
       <div class="mySlides">
-        <q style="color: black;">To live is the rarest thing in the world. Most people exist, that is all.</q>
+        <q>To live is the rarest thing in the world. Most people exist, that is all.</q>
         <p class="author">- Oscar Wilde</p>
       </div>
-      
+
       <div class="mySlides">
-        <q style="color: black;">That it will never come again is what makes life so sweet.</q>
+        <q>That it will never come again is what makes life so sweet.</q>
         <p class="author">- Emily Dickinson</p>
       </div>
-      
+
       <div class="mySlides">
-        <q style="color: black;">To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.</q>
+        <q>To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.</q>
         <p class="author">- Ralph Waldo Emerson</p>
       </div>
-      
+
+      <!-- Navigation arrows -->
       <a class="prev" onclick="plusSlides(-1)">❮</a>
       <a class="next" onclick="plusSlides(1)">❯</a>
-    
     </div>
 
     <script>
-      var slideIndex = 1;
-      showSlides(slideIndex);
-      
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-      
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-      
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " active";
-      }
-      </script>
+      var slideIndex = 0;
+      showSlides();
 
-    <div class="footer"><footer>  
-      <br>
-      <div>
-      <hr class="solid"> 
-      <a id="email" href="mailto:JosieR.Kwan@gmail.com" style="color: black;">JosieR.Kwan@gmail.com</a>
-      <span class="copyright">&copy; 2023 The Official Website of Josie Kwan</span>
-      </div>
-    </footer></div>
-    
+      function plusSlides(n) {
+        slideIndex += n;
+        showSlides();
+      }
+
+      function showSlides() {
+        var slides = document.getElementsByClassName("mySlides");
+        if (slideIndex >= slides.length) { slideIndex = 0 }
+        if (slideIndex < 0) { slideIndex = slides.length - 1 }
+
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+      }
+    </script>
+
+    <!-- Footer -->
+    <div class="footer">
+      <footer>
+        <br />
+        <hr class="solid" />
+        <a id="email" href="mailto:JosieR.Kwan@gmail.com" style="color: black;">JosieR.Kwan@gmail.com</a>
+        <span class="copyright">&copy; 2023 The Official Website of Josie Kwan</span>
+      </footer>
+    </div>
   </body>
 </html>
