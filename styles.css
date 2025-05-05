@@ -60,7 +60,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  padding: 20px;
+  padding: 40px;
 }
 
 /* Ensure heading is above the grid content */
@@ -82,14 +82,12 @@ body {
 }
 
 /* Responsive aspect-ratio for embeds */
-iframe,
-object,
-video {
+iframe, object, video {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
   border: none;
   border-radius: 8px;
-  margin-bottom: 10px;
 }
 
 /* Box Links */
