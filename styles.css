@@ -1,201 +1,138 @@
-/* General Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+  }
 
-/* Page Styling */
+/\* Page Styling \*/
 body {
-  background-color: white;
-  padding-top: 70px;
-  font-family: "Oxygen", sans-serif;
+background-color: white;
+padding-top: 70px;
+font-family: "Oxygen", sans-serif;
 }
 
-/* Header */
+/\* Header \*/
 .header {
-  background: white;
-  color: black;
-  font-size: 125%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
+background: white;
+color: black;
+font-size: 125%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1.5%;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 10;
 }
 
 .header-item {
-  color: #000;
-  margin: 0 10px;
-  text-decoration: none;
+color: #000;
+margin: 0 10px;
+text-decoration: none;
 }
 
-.header a:hover {
-  background-color: #ddd;
-  color: black;
+.header a\:hover {
+background-color: #ddd;
+color: black;
 }
 
-.header-item:hover {
-  text-decoration: underline;
-  color: black;
+.header-item\:hover {
+text-decoration: underline;
+color: black;
 }
 
 .container-header {
-  display: flex;
-  gap: 10px;
-  background-color: white;
+display: flex;
+gap: 10px;
+background-color: white;
 }
 
-#Homepage-link {
-  margin-right: auto;
-  font-size: larger;
+\#Homepage-link {
+margin-right: auto;
+font-size: larger;
 }
 
-/* Main Content Area */
+/\* Main Content Area \*/
 .main {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 20px;
+min-height: 100vh;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+padding: 20px;
 }
 
-/* Ensure heading is above the grid content */
+/\* Ensure heading is above the grid content */
 h1 {
-  text-align: center;
-  grid-column: span 2; /* makes the heading span both columns */
-  margin-bottom: 20px; /* Add some space below the heading */
+text-align: center;
+grid-column: span 2; /* makes the heading span both columns */
+margin-bottom: 20px; /* Add some space below the heading \*/
 }
 
-/* Media query for smaller screens */
+/\* Media query for smaller screens \*/
 @media (max-width: 768px) {
-  .main {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    grid-column: span 1; /* makes sure heading fits within the single column */
-  }
+.main {
+grid-template-columns: 1fr;
 }
 
-/* Box for content */
+h1 {
+grid-column: span 1; /\* makes sure heading fits within the single column \*/
+}
+}
+
+/\* Box for content \*/
 .box {
-  background-color: #f0f0f0;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+background-color: #f0f0f0;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 }
 
-/* Embedded content */
+/\* Embedded content \*/
 iframe,
 object {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border: none;
-  border-radius: 8px;
-  margin-bottom: 10px;
+width: 100%;
+aspect-ratio: 4 / 5;
+border: none;
+border-radius: 8px;
+margin-bottom: 10px;
 }
 
-/* Box Links */
+/\* Box Links \*/
 .box a {
-  font-family: "Rufina", serif;
-  font-size: 1rem;
-  text-align: center;
-  text-decoration: none;
-  color: black;
+font-family: "Rufina", serif;
+font-size: 1rem;
+text-align: center;
+text-decoration: none;
+color: black;
 }
 
-/* Footer */
+/\* Footer \*/
 .footer {
-  background-color: white;
-  color: black;
-  padding: 20px;
-  clear: both;
+background-color: white;
+color: black;
+padding: 20px;
+clear: both;
 }
 
 .copyright {
-  float: right;
-  font-size: 0.8em;
-  margin-left: 20px;
+float: right;
+font-size: 0.8em;
+margin-left: 20px;
 }
 
-#email {
-  float: left;
-  margin-right: 20px;
-  font-size: 0.8em;
-  text-decoration: none;
+\#email {
+float: left;
+margin-right: 20px;
+font-size: 0.8em;
+text-decoration: none;
 }
 
-#email:hover {
-  text-decoration: underline;
-  color: black;
-}
-
-/* Slideshow container */
-.slideshow-container {
-  position: relative;
-  max-width: 80%;
-  margin: 40px auto;
-  background-color: #f4f4f4;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Hide all images by default */
-.mySlides {
-  display: none;
-  text-align: center;
-  font-size: 24px;
-  color: #333;
-}
-
-/* Styling for previous and next buttons */
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  user-select: none;
-  transform: translateY(-50%);
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
-}
-
-/* Author text styling */
-.author {
-  font-size: 18px;
-  font-style: italic;
-  margin-top: 10px;
-  color: #555;
-}
-
-/* Quote text styling */
-q {
-  font-size: 28px;
-  font-family: "Rufina", serif;
-  display: block;
-  margin: 10px 0;
-  color: black;
-  line-height: 1.5;
+\#email\:hover {
+text-decoration: underline;
+color: black;
 }
