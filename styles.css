@@ -13,18 +13,6 @@ body {
 }
 
 /* Header */
-
-h1 {
-  text-align: center;
-  grid-column: span 2; /* makes it span both columns in the grid */
-  margin-bottom: 20px; /* Add some space below the heading */
-}
-
-  h1 {
-    grid-column: span 1; /* makes sure heading fits within the single column */
-  }
-}
-
 .header {
   background: white;
   color: black;
@@ -74,13 +62,23 @@ h1 {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
-  padding-bottom: 50px;
+}
+
+/* Ensure heading is above the grid content */
+h1 {
+  text-align: center;
+  grid-column: span 2; /* makes the heading span both columns */
+  margin-bottom: 20px; /* Add some space below the heading */
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .main {
     grid-template-columns: 1fr;
+  }
+
+  h1 {
+    grid-column: span 1; /* makes sure heading fits within the single column */
   }
 }
 
@@ -119,7 +117,6 @@ object {
   background-color: white;
   color: black;
   padding: 20px;
-  padding-bottom: 20px;
   clear: both;
 }
 
@@ -134,5 +131,9 @@ object {
   margin-right: 20px;
   font-size: 0.8em;
   text-decoration: none;
-  color: #000;
+}
+
+#email:hover {
+  text-decoration: underline;
+  color: black;
 }
