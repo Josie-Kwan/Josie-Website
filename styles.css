@@ -59,9 +59,16 @@ body {
 .main {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Box for content */
