@@ -7,6 +7,7 @@
 
 /* Page Styling */
 body {
+  margin: 1;
   background-color: white;
   padding-top: 70px;
   font-family: "Oxygen", sans-serif;
@@ -58,7 +59,7 @@ body {
 /* Main Content Area */
 .main-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
   padding: 40px;
 }
@@ -97,6 +98,7 @@ iframe, object, video {
   text-align: center;
   text-decoration: none;
   color: black;
+  line-height: 1.5;
 }
 
 /* Footer */
@@ -104,21 +106,25 @@ iframe, object, video {
   background-color: white;
   color: black;
   padding: 20px;
-  clear: both;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .copyright {
-  float: right;
   font-size: 0.8em;
-  margin-left: 20px;
 }
 
 #email {
-  float: left;
-  margin-right: 20px;
   font-size: 0.8em;
   text-decoration: none;
 }
+
+#email:hover {
+  text-decoration: underline;
+  color: black;
+}
+
 
 #email:hover {
   text-decoration: underline;
