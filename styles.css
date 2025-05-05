@@ -13,6 +13,18 @@ body {
 }
 
 /* Header */
+
+h1 {
+  text-align: center;
+  grid-column: span 2; /* makes it span both columns in the grid */
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+  h1 {
+    grid-column: span 1; /* makes sure heading fits within the single column */
+  }
+}
+
 .header {
   background: white;
   color: black;
