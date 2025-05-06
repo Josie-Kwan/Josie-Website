@@ -43,7 +43,6 @@ body {
 
 .header-item:hover {
   text-decoration: underline;
-  color: black;
 }
 
 .container-header {
@@ -85,20 +84,24 @@ body {
   font-size: clamp(1rem, 2.2vw, 1.1rem);
 }
 
-/* One box in column */
+/* Responsive grid */
 @media (max-width: 768px) {
   .main-grid {
     grid-template-columns: 1fr;
     padding: 20px;
   }
+
+  .box {
+    margin: 0 auto;
+    width: 90%;
+  }
 }
 
-
-/* Responsive aspect-ratio for embeds */
+/* Responsive embeds (YouTube, Canva, PDF, etc.) */
 iframe, object, video {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   border: none;
   border-radius: 8px;
 }
@@ -110,6 +113,7 @@ iframe, object, video {
   text-align: center;
   text-decoration: none;
   color: black;
+  margin-top: 10px;
 }
 
 /* Footer */
