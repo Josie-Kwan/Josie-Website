@@ -10,14 +10,13 @@ body {
   background-color: white;
   padding-top: 70px;
   font-family: "Oxygen", sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 /* Header */
 .header {
   background: white;
   color: black;
-  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  font-size: 125%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +32,6 @@ body {
   color: #000;
   margin: 0 10px;
   text-decoration: none;
-  font-size: clamp(1rem, 2vw, 1.1rem);
 }
 
 .header a:hover {
@@ -54,15 +52,27 @@ body {
 
 #Homepage-link {
   margin-right: auto;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: larger;
 }
 
 /* Main Content Area */
 .main-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Max 2 columns */
   gap: 20px;
   padding: 40px;
+}
+
+/* Responsive: stack to 1 column on small screens */
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .box {
+    padding: 20px;
+  }
 }
 
 /* Ensure heading is above the grid content */
@@ -70,7 +80,6 @@ body {
   grid-column: 1 / -1;
   text-align: center;
   margin-bottom: 20px;
-  font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
 /* Box for content */
@@ -82,14 +91,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: clamp(1rem, 2.2vw, 1.1rem);
-}
-
-/* Extra padding if only one box in column */
-@media (max-width: 600px) {
-  .box {
-    margin: 0 10px;
-  }
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Responsive aspect-ratio for embeds */
@@ -104,7 +107,7 @@ iframe, object, video {
 /* Box Links */
 .box a {
   font-family: "Rufina", serif;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: 1rem;
   text-align: center;
   text-decoration: none;
   color: black;
@@ -116,19 +119,18 @@ iframe, object, video {
   color: black;
   padding: 20px;
   clear: both;
-  font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
 .copyright {
   float: right;
-  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  font-size: 0.8em;
   margin-left: 20px;
 }
 
 #email {
   float: left;
   margin-right: 20px;
-  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  font-size: 0.8em;
   text-decoration: none;
 }
 
@@ -151,7 +153,7 @@ iframe, object, video {
 .mySlides {
   display: none;
   text-align: center;
-  font-size: clamp(1.3rem, 4vw, 1.5rem);
+  font-size: 24px;
   color: #333;
 }
 
@@ -162,7 +164,7 @@ iframe, object, video {
   padding: 16px;
   color: white;
   font-weight: bold;
-  font-size: clamp(1rem, 3vw, 1.1rem);
+  font-size: 18px;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   cursor: pointer;
@@ -180,14 +182,14 @@ iframe, object, video {
 }
 
 .author {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: 18px;
   font-style: italic;
   margin-top: 10px;
   color: #555;
 }
 
 q {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: 28px;
   font-family: "Rufina", serif;
   display: block;
   margin: 10px 0;
