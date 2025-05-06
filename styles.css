@@ -7,7 +7,6 @@
 
 /* Page Styling */
 body {
-  margin: 1;
   background-color: white;
   padding-top: 70px;
   font-family: "Oxygen", sans-serif;
@@ -33,7 +32,6 @@ body {
   color: #000;
   margin: 0 10px;
   text-decoration: none;
-  font-family: "Oxygen", sans-serif;
 }
 
 .header a:hover {
@@ -60,12 +58,21 @@ body {
 /* Main Content Area */
 .main-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Max 2 columns */
   gap: 20px;
   padding: 40px;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto;
+}
+
+/* Responsive: stack to 1 column on small screens */
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .box {
+    padding: 20px;
+  }
 }
 
 /* Ensure heading is above the grid content */
@@ -84,6 +91,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Responsive aspect-ratio for embeds */
@@ -102,7 +111,6 @@ iframe, object, video {
   text-align: center;
   text-decoration: none;
   color: black;
-  line-height: 1.5;
 }
 
 /* Footer */
@@ -110,25 +118,21 @@ iframe, object, video {
   background-color: white;
   color: black;
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  clear: both;
 }
 
 .copyright {
+  float: right;
   font-size: 0.8em;
+  margin-left: 20px;
 }
 
 #email {
+  float: left;
+  margin-right: 20px;
   font-size: 0.8em;
   text-decoration: none;
 }
-
-#email:hover {
-  text-decoration: underline;
-  color: black;
-}
-
 
 #email:hover {
   text-decoration: underline;
