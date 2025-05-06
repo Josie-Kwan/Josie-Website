@@ -10,14 +10,14 @@ body {
   background-color: white;
   padding-top: 70px;
   font-family: "Oxygen", sans-serif;
-  font-size: 100%;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 /* Header */
 .header {
   background: white;
   color: black;
-  font-size: 2.5em;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,6 +33,7 @@ body {
   color: #000;
   margin: 0 10px;
   text-decoration: none;
+  font-size: clamp(1rem, 2vw, 1.1rem);
 }
 
 .header a:hover {
@@ -53,43 +54,42 @@ body {
 
 #Homepage-link {
   margin-right: auto;
-  font-size: larger;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
 /* Main Content Area */
 .main-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Max 2 columns */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
   padding: 40px;
 }
 
-/* Responsive: stack to 1 column on small screens */
-@media (max-width: 768px) {
-  .main-grid {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-
-  /* Ensure heading is above the grid content */
-  .main-grid h1 {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-} /* ← This was missing */
+/* Ensure heading is above the grid content */
+.main-grid h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+}
 
 /* Box for content */
 .box {
   background-color: #f0f0f0;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+}
+
+/* Extra padding if only one box in column */
+@media (max-width: 600px) {
+  .box {
+    margin: 0 10px;
+  }
 }
 
 /* Responsive aspect-ratio for embeds */
@@ -104,7 +104,7 @@ iframe, object, video {
 /* Box Links */
 .box a {
   font-family: "Rufina", serif;
-  font-size: 1rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   text-align: center;
   text-decoration: none;
   color: black;
@@ -120,14 +120,14 @@ iframe, object, video {
 
 .copyright {
   float: right;
-  font-size: 0.8em;
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
   margin-left: 20px;
 }
 
 #email {
   float: left;
   margin-right: 20px;
-  font-size: 0.8em;
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
   text-decoration: none;
 }
 
@@ -150,7 +150,7 @@ iframe, object, video {
 .mySlides {
   display: none;
   text-align: center;
-  font-size: 24px;
+  font-size: clamp(1.3rem, 4vw, 1.5rem);
   color: #333;
 }
 
@@ -161,7 +161,7 @@ iframe, object, video {
   padding: 16px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: clamp(1rem, 3vw, 1.1rem);
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   cursor: pointer;
@@ -179,14 +179,14 @@ iframe, object, video {
 }
 
 .author {
-  font-size: 18px;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-style: italic;
   margin-top: 10px;
   color: #555;
 }
 
 q {
-  font-size: 28px;
+  font-size: clamp(1.5rem, 4vw, 1.75rem);
   font-family: "Rufina", serif;
   display: block;
   margin: 10px 0;
