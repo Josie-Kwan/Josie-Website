@@ -69,7 +69,6 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 90vh; /* prevents it from being too tall */
   object-fit: contain; /* scales without cropping */
 }
 
