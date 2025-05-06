@@ -100,7 +100,7 @@ body {
 
 /* Responsive embeds (YouTube, Canva, PDF, etc.) */
 iframe, object, video {
-  width: 100%;
+  width: auto;
   height: auto;
   aspect-ratio: 16 / 9;
   border: none;
