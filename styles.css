@@ -82,6 +82,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   font-size: clamp(1rem, 2.2vw, 1.1rem);
+  min-height: 50vh;
 }
 
 /* Responsive grid */
