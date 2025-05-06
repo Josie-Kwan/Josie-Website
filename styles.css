@@ -189,7 +189,7 @@ iframe, object, video {
 }
 
 q {
-  font-size: 28px;
+  font-size: clamp(1.5rem, 4vw, 1.75rem);
   font-family: "Rufina", serif;
   display: block;
   margin: 10px 0;
