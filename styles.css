@@ -59,15 +59,15 @@ body {
 /* Fullscreen image section */
 .fullscreen-image {
   width: 90%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 70px; /* to offset the fixed header */
 }
 
 .fullscreen-image img {
   width: 90%;
-  object-fit: cover; /* Makes image fill screen while preserving aspect ratio */
+  height: auto;
+  display: block;
+  max-height: 90vh; /* prevents it from being too tall */
+  object-fit: contain; /* scales without cropping */
 }
 
 /* Main Content Area */
