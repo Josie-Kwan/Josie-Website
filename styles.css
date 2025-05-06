@@ -116,6 +116,7 @@ iframe, object, video {
   color: black;
   padding: 20px;
   clear: both;
+  font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
 .copyright {
@@ -186,7 +187,7 @@ iframe, object, video {
 }
 
 q {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-family: "Rufina", serif;
   display: block;
   margin: 10px 0;
