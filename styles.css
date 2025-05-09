@@ -74,7 +74,7 @@ body {
 /* Main Content Area */
 .main-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 40px;
 }
@@ -100,13 +100,12 @@ body {
   min-height: 700px;
 }
 
-/* Responsive grid 
+Responsive grid 
 @media (max-width: 768px) {
   .main-grid {
     grid-template-columns: 1fr;
     padding: 20px;
   } 
-*/
 
   .box {
     margin: 0 auto;
