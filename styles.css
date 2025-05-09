@@ -17,7 +17,6 @@ body {
 .header {
   background: white;
   color: black;
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,9 +30,9 @@ body {
 
 .header-item {
   color: #000;
-  margin: 0 10px;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  margin: 0 6px;
 }
 
 .header a:hover {
@@ -45,15 +44,21 @@ body {
   text-decoration: underline;
 }
 
+@media (max-width: 600px) {
+  .header {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+  
 .container-header {
   display: flex;
-  gap: 10px;
+  gap: 6px;
   background-color: white;
 }
 
 #Homepage-link {
   margin-right: auto;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /* Fullscreen image section */
