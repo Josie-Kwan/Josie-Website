@@ -110,6 +110,10 @@ html {
   font-size: 1.2rem;
 }
 
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
 
 /* Main Content Area */
 .main-grid {
